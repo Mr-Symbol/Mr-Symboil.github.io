@@ -1,0 +1,280 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="simulate.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="outer" id="out" >
+            <div class="left" id="le">
+                <span>
+					<h1 id="heading1" style="color: white;text-align: center;">Formula to be used to Calculate</h1>
+				</span>
+                <ul>
+                    <li style="font-size: 1.2rem;">
+                        <b>Sum</b> = Marks1 + Marks2 + Marks3 + Marks4 + Marks5
+                    </li>
+                    <li style="font-size: 1.2rem;">
+                        <b>Percentage</b> = Sum / TotalMarks * 100 <br> 
+                        where <b>Total Marks</b> = No. of Subjects * Maximum Marks
+                    </li>
+                </ul>
+			
+                <center><span><h1 id="heading2">Enter Marks of 5 Subjects</h1></span></center>
+                
+                <section id="marks-section">
+                    <form id = "myForm">
+                        <div class="s1">
+                            <center><span class="sub">Subject1</span></center>
+                            <center><input id="sub1" class="box" type="number" name="sub1" placeholder="Enter Marks" required></center>
+                        </div>
+                        <div class="s2">
+                            <center><span class="sub">Subject2</span></center>
+                            <center><input id="sub2" class="box" type="number" name="sub2" placeholder="Enter Marks" required></center>
+                        </div>
+                        <div class="s1">
+                            <center><span class="sub">Subject3</span></center>
+                            <center><input id="sub3" class="box" type="number" name="sub3" placeholder="Enter Marks" required></center>
+                        </div>
+                        <div class="s2">
+                            <center><span class="sub">Subject4</span></center>
+                            <center><input id="sub4" class="box" type="number" name="sub4" placeholder="Enter Marks" required></center>
+                        </div>
+                            
+                        <center><span class="sub">Subject5</span></center>
+                        <center><input id="sub5" class="box" type="number" name="sub5" placeholder="Enter Marks" required></center>
+                        
+                        <center><span><h1 id="heading3">Enter Maximum Marks</h1></span></center>
+                        <center><input id="max" class="box" type="number" name="max-marks" placeholder="Enter Maximum Marks" required></center>
+                    </form>
+                </section>
+            
+                <div id="button">
+                    <button class="btn1" id="simulate_button" onclick="load()">Simulate</button>
+                </div>
+                
+            </div>
+            
+            <div class="center" id="cen">
+                <h2><center><b>Code</b></center></h2><hr><hr><br>
+                <span id="line0">&emsp;#include&lt;stdio.h&gt;</stdio.h></span><br><br>
+        
+                <span id="line18">&emsp;int findSum(int lmarks1, int lmarks2, int lmarks3, int lmarks4, int lmarks5) {</span><br>
+                <span id="line19">&emsp;&emsp;int sum;</span><br>
+                <span id="line20">&emsp;&emsp;sum = lmarks1 + lmarks2 + lmarks3 + lmarks4 + lmarks5;</span><br>
+                <span id="line21">&emsp;&emsp;return sum;</span><br>
+                <span>&emsp;}</span><br><br>
+                
+                <span id="line23">&emsp;float findPercentage(int obtained, int total) {</span><br>
+                <span id="line24">&emsp;&emsp;float percent;</span><br>
+                <span id="line25">&emsp;&emsp;percent = obtained*100/(float)total;</span><br>
+                <span id="line26">&emsp;&emsp;return percent;</span><br>
+                <span>&emsp;}</span><br><br>
+                
+                <span id="line1">&emsp;int main() {</span><br>
+                <span id="line2">&emsp;&emsp;int marks1, marks2, marks3, marks4, marks5;</span><br>
+                <span id="line3">&emsp;&emsp;int sum, maxMarks;</span><br>
+                <span id="line4">&emsp;&emsp;float percent;</span><br><br>
+                
+                <span id="line5">&emsp;&emsp;printf("Enter maxMarks: ");</span><br>
+                <span id="line6">&emsp;&emsp;scanf("%d", &maxMarks);</span><br><br>
+
+                <span id="line7">&emsp;&emsp;printf("Enter marks1: ");</span><br>
+                <span id="line8">&emsp;&emsp;scanf("%d", &marks1);</span><br><br>
+
+                <span id="line9">&emsp;&emsp;printf("Enter marks2: ");</span><br>
+                <span id="line10">&emsp;&emsp;scanf("%d", &marks2);</span><br><br>
+
+                <span id="line11">&emsp;&emsp;printf("Enter marks3: ");</span><br>
+                <span id="line12">&emsp;&emsp;scanf("%d", &marks3);</span><br><br>
+                
+                <span id="line13">&emsp;&emsp;printf("Enter marks4: ");</span><br>
+                <span id="line14">&emsp;&emsp;scanf("%d", &marks4);</span><br><br>
+                
+                <span id="line15">&emsp;&emsp;printf("Enter marks5: ");</span><br>
+                <span id="line16">&emsp;&emsp;scanf("%d", &marks5);</span><br><br>
+                
+                <span id="line17">&emsp;&emsp;sum = findSum(marks1, marks2, marks3, marks4, marks5);</span><br>
+                <span id="line22">&emsp;&emsp;percent = findPercentage(sum, 500);</span><br><br>
+                
+                <span id="line27">&emsp;&emsp;printf("Sum of all Marks: %d\n", sum);</span><br>
+                <span id="line28">&emsp;&emsp;printf("Percentage gain: %.2f%%\n", percent);</span><br>
+                <span id="line29">&emsp;&emsp;return(0);</span><br>
+                <span>&emsp;}</span><hr><hr>
+                <center>
+                    <button class="btn1" id = "back" onclick="back()">&laquo BACK</button>
+                    <button class="btn1" id = "next" onclick="next()">NEXT  &raquo</button>
+                    <button class="btn1" id = "refresh" onclick="refresh()">REFERESH</button>
+                </center>
+            </div>
+            <div class="right" id="ri">
+                <div class="output">
+                    <b><center>Output</center></b><hr>
+                    <span id="O0" style="display: none;">Enter maxMarks: </span><span id="O1" style="display: none;"></span><br><br>
+                    
+                    <span id="O2" style="display: none;">Enter marks1: </span><span id="O3" style="display: none;"></span><br>
+                    <span id="O4" style="display: none;">Enter marks2: </span><span id="O5" style="display: none;"></span><br>
+                    <span id="O6" style="display: none;">Enter marks3: </span><span id="O7" style="display: none;"></span><br>
+                    <span id="O8" style="display: none;">Enter marks4: </span><span id="O9" style="display: none;"></span><br>
+                    <span id="O10" style="display: none;">Enter marks5: </span><span id="O11" style="display: none;"></span><br><br>
+
+                    <span id="O12" style="display: none;">Sum of all Marks: </span><span id="O13" style="display: none;"></span><br>
+                    <span id="O14" style="display: none;">Percentage gain: </span><span id="O15" style="display: none;"></span><br>
+                </div>
+                <div class="simulate">
+                    <b><center>Simulation Window</center></b><hr>
+                    <div class="functionOuter">
+                        <div class="function" id="fun">
+                            <b><center>findSum()</center><hr></b>
+                            <div class="variableSpace">
+                                <div class="variable" id="lmarks1">
+                                    <center>int</center><hr>
+                                    <center>lmarks1</center><hr>
+                                    <center><span id="findSum_lmarks1"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace">
+                                <div class="variable" id="lmarks2">
+                                    <center>int</center><hr>
+                                    <center>lmarks2</center><hr>
+                                    <center><span id="findSum_lmarks2"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace">
+                                <div class="variable" id="lmarks3">
+                                    <center>int</center><hr>
+                                    <center>lmarks3</center><hr>
+                                    <center><span id="findSum_lmarks3"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace">
+                                <div class="variable" id="lmarks4">
+                                    <center>int</center><hr>
+                                    <center>lmarks4</center><hr>
+                                    <center><span id="findSum_lmarks4"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace">
+                                <div class="variable" id="lmarks5">
+                                    <center>int</center><hr>
+                                    <center>lmarks5</center><hr>
+                                    <center><span id="findSum_lmarks5"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace">
+                                <div class="variable" id="lsum">
+                                    <center>int</center><hr>
+                                    <center>sum</center><hr>
+                                    <center><span id="findSum_sum"></span></center>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="findpercentage" id="per">
+                            <b><center>findpercentage()</center><hr></b>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace">
+                                <div class="variable" id="obt">
+                                    <center>int</center><hr>
+                                    <center>obtained</center><hr>
+                                    <center><span id="findpercentage_marks"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace">
+                                <div class="variable" id="total">
+                                    <center>int</center><hr>
+                                    <center>total</center><hr>
+                                    <center><span id="findpercentage_total"></span></center>
+                                </div>
+                            </div>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace"></div>
+                            <div class="variableSpace">
+                                <div class="variable" id="percentage">
+                                    <center>float</center><hr>
+                                    <center>percent</center><hr>
+                                    <center><span id="findpercentage_percentage"></span></center>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="main" id="main">
+                        <b><center>main()</center><hr></b>
+                        <div class="variableSpace">
+                            <div class="variable" id="marks1">
+                                <center>int</center><hr>
+                                <center>marks1</center><hr>
+                                <center><span id="main_marks1"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="marks2">
+                                <center>int</center><hr>
+                                <center>marks2</center><hr>
+                                <center><span id="main_marks2"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="marks3">
+                                <center>int</center><hr>
+                                <center>marks3</center><hr>
+                                <center><span id="main_marks3"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="marks4">
+                                <center>int</center><hr>
+                                <center>marks4</center><hr>
+                                <center><span id="main_marks4"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="marks5">
+                                <center>int</center><hr>
+                                <center>marks5</center><hr>
+                                <center><span id="main_marks5"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="sum">
+                                <center>int</center><hr>
+                                <center>sum</center><hr>
+                                <center><span id="main_sum"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="maxMarks">
+                                <center>int</center><hr>
+                                <center>maxMarks</center><hr>
+                                <center><span id="main_max_marks"></span></center>
+                            </div>
+                        </div>
+                        <div class="variableSpace">
+                            <div class="variable" id="percent">
+                                <center>float</center><hr>
+                                <center>percent</center><hr>
+                                <center><span id="main_percent"></span></center>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript"> 
+            setup();
+            refresh();
+        </script>
+    </body>
+</html>
